@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Protected Excel</title>
+  <!-- Load Handsontable (Excel-like grid) -->
+  <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" rel="stylesheet">
+  <!-- Load CSV parser -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="./firebase-config.js"></script>
+  <!-- Your script -->
+  <script src="./javascript.js" defer></script>
+</head>
+<body>
+  <h1>VECTOR BUSINESS EXCEL PROTECTOR</h1>
+  <div>
+    <button onclick="loadCSV('DAILY STOCKSHEET.csv')">DAILY STOCKSHEET</button>
+    <button onclick="loadCSV('MONTLYREVSTOCKSHEET.csv')">MONTHLY STOCKSHEET</button>
+  </div>
+  <div id="excel-grid"></div>
+  <div id="approval-alert" style="display:none; color: red; margin-top: 20px;">
+    <p>Formula change requested! Owner must approve.</p>
+  </div>
+</body>
+</html>
